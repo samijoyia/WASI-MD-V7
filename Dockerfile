@@ -3,7 +3,7 @@
 #  Pulls and runs the actual bot image
 # ═══════════════════════════════════════════════════════════════════
 
-FROM mrwasi/wasi-md-v7:latest
+FROM mrwasi/wasimdv7:latest
 
 # Heroku requires binding to $PORT
 ENV PORT=3000
