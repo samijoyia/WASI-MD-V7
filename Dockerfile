@@ -5,6 +5,11 @@
 
 FROM mrwasi/wasimdv7:latest
 
+# Cache buster - forces Heroku to pull latest image
+# Change this date whenever you update the base image
+ENV CACHE_BUST=2024-02-10-v2
+ENV IMAGE_VERSION=7.0.0-latest
+
 # Heroku requires binding to $PORT
 ENV PORT=3000
 
