@@ -1,199 +1,207 @@
 {
-    "name": "WASI-MD V7",
-    "description": "Advanced WhatsApp Bot by ITXXWASI - Docker-based Deployment. Most settings can be configured from WhatsApp using .settings command!",
-    "repository": "https://github.com/itxxwasi/wasi-md-loader",
-    "logo": "https://raw.githubusercontent.com/itxxwasi/WASI-MD-V7/master/assets/logo.png",
-    "keywords": [
-        "whatsapp",
-        "bot",
-        "automation",
-        "wasi-md",
-        "baileys",
-        "multi-device",
-        "heroku",
-        "docker"
-    ],
-    "stack": "container",
-    "env": {
-        "MONGODB_URI": {
-            "description": "MongoDB connection string (Get free from: mongodb.com/cloud/atlas)",
-            "required": true
-        },
-        "SESSION_ID": {
-            "description": "Your WhatsApp Session ID (unique identifier for your bot)",
-            "required": true
-        },
-        "OWNER_NUMBER": {
-            "description": "Bot owner's WhatsApp number with country code (e.g., 263788049675)",
-            "required": true
-        },
-        "PREFIX": {
-            "description": "Command prefix (Can also be changed via .settings set prefix <value>)",
-            "value": ".",
-            "required": false
-        },
-        "BOT_NAME": {
-            "description": "Bot display name (Can also be changed via .settings set botName <value>)",
-            "value": "WASI BOT",
-            "required": false
-        },
-        "OWNER_NAME": {
-            "description": "Owner display name (Can also be changed via .settings set ownerName <value>)",
-            "value": "MR WASI DEV",
-            "required": false
-        },
-        "MODE": {
-            "description": "Bot mode: public or private (Can also be changed via .settings set mode <value>)",
-            "value": "public",
-            "required": false
-        },
-        "API_URL": {
-            "description": "WASI DEV API URL (Can also be changed via .settings set apiUrl <value>)",
-            "value": "https://wasidev-apis-bcceee4d52a4.herokuapp.com",
-            "required": false
-        },
-        "WASIDEV_API_KEY": {
-            "description": "WASI DEV API Key (Optional, can be set via .settings set wasidevApiKey <value>)",
-            "value": "",
-            "required": false
-        },
-        "SRIHUB_API_KEY": {
-            "description": "SriHub API Key (Optional, can be set via .settings set sriHubApiKey <value>)",
-            "value": "",
-            "required": false
-        },
-        "APIFY_TOKEN": {
-            "description": "Apify Token (Optional, can be set via .settings set apifyToken <value>)",
-            "value": "",
-            "required": false
-        },
-        "TIME_ZONE": {
-            "description": "Bot timezone (Can be changed via .settings set timeZone <value>)",
-            "value": "Asia/Karachi",
-            "required": false
-        },
-        "FONT_STYLE": {
-            "description": "Font style for messages (Can be changed via .settings set fontStyle <value>)",
-            "value": "original",
-            "required": false
-        },
-        "MENU_STYLE": {
-            "description": "Menu style: classic, modern, minimal (Can be changed via .settings set menuStyle <value>)",
-            "value": "classic",
-            "required": false
-        },
-        "MENU_IMAGE_ASSET": {
-            "description": "Use local menu image assets (Can be changed via .settings set menuImageAsset <value>)",
-            "value": "true",
-            "required": false
-        },
-        "MENU_IMAGE_URL": {
-            "description": "Use custom menu image URL (Can be changed via .settings set menuImageUrl <value>)",
-            "value": "false",
-            "required": false
-        },
-        "BOT_MENU_IMAGE_URL": {
-            "description": "Custom menu image URL (Can be changed via .settings set menuImage <value>)",
-            "value": "https://files.catbox.moe/ifruw6.jpg",
-            "required": false
-        },
-        "AUTO_READ": {
-            "description": "Auto-read messages (Can be changed via .settings set autoRead true/false)",
-            "value": "false",
-            "required": false
-        },
-        "AUTO_STATUS_SEEN": {
-            "description": "Auto-view statuses (Can be changed via .settings set autoStatusSeen true/false)",
-            "value": "true",
-            "required": false
-        },
-        "AUTO_STATUS_REACT": {
-            "description": "Auto-react to statuses (Can be changed via .settings set autoStatusReact true/false)",
-            "value": "true",
-            "required": false
-        },
-        "AUTO_STATUS_SAVE": {
-            "description": "Auto-save statuses (Can be changed via .settings set autoStatusSave true/false)",
-            "value": "false",
-            "required": false
-        },
-        "AUTO_STATUS_MSG": {
-            "description": "Send message on status view (Can be changed via .settings set autoStatusMessage true/false)",
-            "value": "false",
-            "required": false
-        },
-        "AUTO_WELCOME": {
-            "description": "Auto-welcome new members (Can be changed via .settings set welcomeMessage true/false)",
-            "value": "false",
-            "required": false
-        },
-        "AUTO_GOODBYE": {
-            "description": "Auto-goodbye leaving members (Can be changed via .settings set goodbyeMessage true/false)",
-            "value": "false",
-            "required": false
-        },
-        "WELCOME_MSG": {
-            "description": "Welcome message template (Can be changed via .settings set welcomeMsg <value>)",
-            "value": "Hello @user, Welcome to @group! 👋",
-            "required": false
-        },
-        "GOODBYE_MSG": {
-            "description": "Goodbye message template (Can be changed via .settings set goodbyeMsg <value>)",
-            "value": "@user LEFT THE ROOM HAVE NICE DAY! 👋",
-            "required": false
-        },
-        "LEVEL_UP": {
-            "description": "Enable level up system (Can be changed via .settings set levelup true/false)",
-            "value": "true",
-            "required": false
-        },
-        "AUTO_TYPING": {
-            "description": "Show typing indicator (Can be changed via .settings set autoTyping true/false)",
-            "value": "false",
-            "required": false
-        },
-        "AUTO_RECORDING": {
-            "description": "Show recording indicator (Can be changed via .settings set autoRecording true/false)",
-            "value": "false",
-            "required": false
-        },
-        "ALWAYS_ONLINE": {
-            "description": "Always show online (Can be changed via .settings set alwaysOnline true/false)",
-            "value": "true",
-            "required": false
-        },
-        "YT_COOKIES": {
-            "description": "YouTube cookies for downloads (Can be changed via .settings set ytCookies <value>)",
-            "value": "",
-            "required": false
-        },
-        "YT_USER_AGENT": {
-            "description": "User agent for YouTube (Can be changed via .settings set ytUserAgent <value>)",
-            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "required": false
-        },
-        "CLOUDINARY_CLOUD_NAME": {
-            "description": "Cloudinary cloud name (Can be changed via .settings set cloudinaryCloudName <value>)",
-            "value": "",
-            "required": false
-        },
-        "CLOUDINARY_API_KEY": {
-            "description": "Cloudinary API key (Can be changed via .settings set cloudinaryApiKey <value>)",
-            "value": "",
-            "required": false
-        },
-        "CLOUDINARY_API_SECRET": {
-            "description": "Cloudinary API secret (Can be changed via .settings set cloudinaryApiSecret <value>)",
-            "value": "",
-            "required": false
-        }
+  "name": "WASI-MD V7",
+  "description": "Advanced WhatsApp Bot by ITXXWASI - Docker-based Deployment. Most settings can be configured from WhatsApp using .settings command!",
+  "repository": "https://github.com/itxxwasi/wasi-md-loader",
+  "logo": "https://raw.githubusercontent.com/itxxwasi/WASI-MD-V7/master/assets/logo.png",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "automation",
+    "wasi-md",
+    "baileys",
+    "multi-device",
+    "heroku",
+    "docker"
+  ],
+  "stack": "container",
+  "env": {
+    "MONGODB_URI": {
+      "description": "MongoDB connection string (Get free from: mongodb.com/cloud/atlas)",
+      "required": true
     },
-    "formation": {
-        "web": {
-            "quantity": 1,
-            "size": "basic"
-        }
+    "SESSION_ID": {
+      "description": "Your WhatsApp Session ID (unique identifier for your bot)",
+      "required": true
     },
-    "addons": [],
-    "buildpacks": []
+    "OWNER_NUMBER": {
+      "description": "Bot owner's WhatsApp number with country code (e.g., 263788049675)",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Command prefix (Can also be changed via .settings set prefix <value>)",
+      "value": ".",
+      "required": false
+    },
+    "BOT_NAME": {
+      "description": "Bot display name (Can also be changed via .settings set botName <value>)",
+      "value": "WASI BOT",
+      "required": false
+    },
+    "OWNER_NAME": {
+      "description": "Owner display name (Can also be changed via .settings set ownerName <value>)",
+      "value": "MR WASI DEV",
+      "required": false
+    },
+    "MODE": {
+      "description": "Bot mode: public or private (Can also be changed via .settings set mode <value>)",
+      "value": "public",
+      "required": false
+    },
+    "API_URL": {
+      "description": "WASI DEV API URL (Can also be changed via .settings set apiUrl <value>)",
+      "value": "https://wasidev-apis-bcceee4d52a4.herokuapp.com",
+      "required": false
+    },
+    "WASIDEV_API_KEY": {
+      "description": "WASI DEV API Key (Optional, can be set via .settings set wasidevApiKey <value>)",
+      "value": "",
+      "required": false
+    },
+    "SRIHUB_API_KEY": {
+      "description": "SriHub API Key (Optional, can be set via .settings set sriHubApiKey <value>)",
+      "value": "",
+      "required": false
+    },
+    "APIFY_TOKEN": {
+      "description": "Apify Token (Optional, can be set via .settings set apifyToken <value>)",
+      "value": "",
+      "required": false
+    },
+    "TIME_ZONE": {
+      "description": "Bot timezone (Can be changed via .settings set timeZone <value>)",
+      "value": "Asia/Karachi",
+      "required": false
+    },
+    "FONT_STYLE": {
+      "description": "Font style for messages (Can be changed via .settings set fontStyle <value>)",
+      "value": "original",
+      "required": false
+    },
+    "MENU_STYLE": {
+      "description": "Menu style: classic, modern, minimal (Can be changed via .settings set menuStyle <value>)",
+      "value": "classic",
+      "required": false
+    },
+    "MENU_IMAGE_ASSET": {
+      "description": "Use local menu image assets (Can be changed via .settings set menuImageAsset <value>)",
+      "value": "true",
+      "required": false
+    },
+    "MENU_IMAGE_URL": {
+      "description": "Use custom menu image URL (Can be changed via .settings set menuImageUrl <value>)",
+      "value": "false",
+      "required": false
+    },
+    "BOT_MENU_IMAGE_URL": {
+      "description": "Custom menu image URL (Can be changed via .settings set menuImage <value>)",
+      "value": "https://files.catbox.moe/ifruw6.jpg",
+      "required": false
+    },
+    "AUTO_READ": {
+      "description": "Auto-read messages (Can be changed via .settings set autoRead true/false)",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_STATUS_SEEN": {
+      "description": "Auto-view statuses (Can be changed via .settings set autoStatusSeen true/false)",
+      "value": "true",
+      "required": false
+    },
+    "AUTO_STATUS_REACT": {
+      "description": "Auto-react to statuses (Can be changed via .settings set autoStatusReact true/false)",
+      "value": "true",
+      "required": false
+    },
+    "AUTO_STATUS_SAVE": {
+      "description": "Auto-save statuses (Can be changed via .settings set autoStatusSave true/false)",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_STATUS_MSG": {
+      "description": "Send message on status view (Can be changed via .settings set autoStatusMessage true/false)",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_WELCOME": {
+      "description": "Auto-welcome new members (Can be changed via .settings set welcomeMessage true/false)",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_GOODBYE": {
+      "description": "Auto-goodbye leaving members (Can be changed via .settings set goodbyeMessage true/false)",
+      "value": "false",
+      "required": false
+    },
+    "WELCOME_MSG": {
+      "description": "Welcome message template (Can be changed via .settings set welcomeMsg <value>)",
+      "value": "Hello @user, Welcome to @group! 👋",
+      "required": false
+    },
+    "GOODBYE_MSG": {
+      "description": "Goodbye message template (Can be changed via .settings set goodbyeMsg <value>)",
+      "value": "@user LEFT THE ROOM HAVE NICE DAY! 👋",
+      "required": false
+    },
+    "LEVEL_UP": {
+      "description": "Enable level up system (Can be changed via .settings set levelup true/false)",
+      "value": "true",
+      "required": false
+    },
+    "AUTO_TYPING": {
+      "description": "Show typing indicator (Can be changed via .settings set autoTyping true/false)",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_RECORDING": {
+      "description": "Show recording indicator (Can be changed via .settings set autoRecording true/false)",
+      "value": "false",
+      "required": false
+    },
+    "ALWAYS_ONLINE": {
+      "description": "Always show online (Can be changed via .settings set alwaysOnline true/false)",
+      "value": "true",
+      "required": false
+    },
+    "YT_COOKIES": {
+      "description": "YouTube cookies for downloads (Can be changed via .settings set ytCookies <value>)",
+      "value": "",
+      "required": false
+    },
+    "YT_USER_AGENT": {
+      "description": "User agent for YouTube (Can be changed via .settings set ytUserAgent <value>)",
+      "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "required": false
+    },
+    "CLOUDINARY_CLOUD_NAME": {
+      "description": "Cloudinary cloud name (Can be changed via .settings set cloudinaryCloudName <value>)",
+      "value": "",
+      "required": false
+    },
+    "CLOUDINARY_API_KEY": {
+      "description": "Cloudinary API key (Can be changed via .settings set cloudinaryApiKey <value>)",
+      "value": "",
+      "required": false
+    },
+    "CLOUDINARY_API_SECRET": {
+      "description": "Cloudinary API secret (Can be changed via .settings set cloudinaryApiSecret <value>)",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Your Heroku App Name (Required for .update command)",
+      "required": false
+    },
+    "HEROKU_API_KEY": {
+      "description": "Your Heroku API Key (Required for .update command)",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [],
+  "buildpacks": []
 }
